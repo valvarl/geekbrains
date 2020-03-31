@@ -1,6 +1,6 @@
 class MyArraySizeException extends IllegalArgumentException{
 
     MyArraySizeException() {
-        super("Wrong size array passed.");
+        super("Wrong size array passed");
     }
 }
