@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SecondMethod {
     private static final int size = 10_000_000;
     private static final int h = size / 2;
@@ -15,6 +17,9 @@ public class SecondMethod {
 
         Thread threadA = new Thread(() -> { new Task(a1); });
         Thread threadB = new Thread(() -> { new Task(a2); });
+
+        threadA.start();
+        threadB.start();
 
         try {
             threadA.join();
@@ -35,6 +40,7 @@ class Task implements Runnable {
 
     Task(float[] arr){
         this.arr = arr;
+        run();
     }
 
     @Override
